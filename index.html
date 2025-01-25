@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Stack Developer Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #0D3B66;
+      --secondary-color: #FAA916;
+      --background-color: #F4F4F9;
+      --text-color: #1E1E24;
+      --light-color: #838383;
+      --card-background: #FFFFFF;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    nav {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      margin: 0 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: var(--secondary-color);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      color: var(--primary-color);
+      border-bottom: 3px solid var(--secondary-color);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    .projects .techstack{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .projects .techstack p{
+        padding: 2px 20px;  
+        box-shadow: 0 6px 15px var(--shadow-color);
+        border-radius: 15px;
+        background-color: #f1f1f1;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      
+    }
+    .skills div{
+        padding: 20px;
+    }
+    .projects div {
+        
+    }
+
+    .skills div, .projects div {
+      background: var(--card-background);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .projects div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .skills div:hover, .projects div:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .projects img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-details {
+      padding: 1.5rem;
+      text-align: left;
+      height: 100%;
+      position: relative;
+      padding: 50px;
+    }
+
+    .project-details h3 {
+      margin: 0.5rem 0;
+      color: var(--text-color);
+    }
+
+    .project-details p {
+      margin: 0.5rem 0;
+      color: var(--light-color);
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--primary-color);
+      color: white;
+      padding: 1.5rem 0;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rico John Pollante</h1>
+    <p>Full Stack Developer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Rico John Pollante, a passionate Full Stack Developer with experience in creating dynamic and responsive web applications. I enjoy solving problems and building projects that make a difference.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>HTML5</h3>
+          <p>Experienced in semantic and accessible markup.</p>
+        </div>
+        <div>
+          <h3>CSS3</h3>
+          <p>Proficient in creating responsive and modern designs.</p>
+        </div>
+        <div>
+          <h3>JavaScript</h3>
+          <p>Strong understanding of ES6+ and frameworks.</p>
+        </div>
+        <div>
+          <h3>React & Angular</h3>
+          <p>Skilled in building interactive front-end applications.</p>
+        </div>
+        <div>
+          <h3>Node.js</h3>
+          <p>Experience in back-end development and APIs.</p>
+        </div>
+        <div>
+          <h3>Python & Django</h3>
+          <p>Expertise in server-side development.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div>
+          <img src="https://via.placeholder.com/300" alt="E-commerce Platform Screenshot">
+          <div class="project-details">
+            <h3>E-commerce Platform</h3>
+            <p>Developed a scalable e-commerce solution with React and Node.js, implementing a dynamic product search and secure payment integration. Enabled the client to handle a 200% increase in traffic during peak seasons.</p>
+            <span class="techstack">
+                <p>React</p>
+                <p>Python</p>
+                <p>Flask</p>
+            </span>
+            <!-- <span class="tag">Web</span> -->
+          </div>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/300" alt="Inventory Management System Screenshot">
+          <div class="project-details">
+            <h3>Inventory Management System</h3>
+            <p>Built a role-based access control system with Angular and Django to ensure secure inventory tracking. Reduced manual errors by 80% and streamlined workflows.</p>
+            <span class="techstack">
+                <p>React</p>
+                <p>Python</p>
+                <p>Flask</p>
+            </span>
+            <!-- <span class="tag">Desktop</span> -->
+          </div>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/300" alt="Analytics Dashboard Screenshot">
+          <div class="project-details">
+            <h3>Analytics Dashboard</h3>
+            <p>Designed a customizable analytics dashboard using React and Python, allowing clients to visualize key business metrics in real time.</p>
+            <span class="techstack">
+                <p>React</p>
+                <p>Python</p>
+                <p>Flask</p>
+            </span>
+            
+            <!-- <span class="tag">Mobile</span> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you'd like to work together or just say hi, feel free to reach out!</p>
+      <p>Mobile: <a>+639544155057</a></p>
+      <p>Email: <a href="mailto:pollante.rico@gmail.com">pollante.rico@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/rico-john-pollante-8b34261a2/" target="_blank">https://www.linkedin.com/in/rico-john-pollante-8b34261a2/</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Rico John Pollante. Built with HTML5 & CSS3.</p>
+  </footer>
+</body>
+</html>
