@@ -77,86 +77,84 @@
       margin-bottom: 1.5rem;
       font-size: 1.8rem;
     }
-    
-    .projects .techstack{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-    }
-
-    .projects .techstack p{
-        padding: 2px 20px;  
-        box-shadow: 0 6px 15px var(--shadow-color);
-        border-radius: 15px;
-        background-color: #f1f1f1;
-    }
 
     .skills, .projects {
+      padding: 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2rem;
-      
-    }
-    .skills div{
-        padding: 20px;
-    }
-    .projects div {
-        
     }
 
     .skills div, .projects div {
       background: var(--card-background);
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 6px 15px var(--shadow-color);
+
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
     }
-
-    .projects div {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .skills div:hover, .projects div:hover {
+/* 
+    .projects div:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+    } */
+
+    
+    .skills div:hover{
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px var(--shadow-color);
     }
 
-    .projects img {
+    .projects .project-card {
+      background-color: var(--card-background);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      transition: all 0.3s ease;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .projects .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .projects .project-card img {
       width: 100%;
       height: 200px;
       object-fit: cover;
+      border-bottom: 2px solid var(--primary-color);
     }
 
-    .project-details {
+    .projects .project-details {
       padding: 1.5rem;
-      text-align: left;
-      height: 100%;
-      position: relative;
-      padding: 50px;
     }
 
-    .project-details h3 {
+    .projects .project-details h3 {
       margin: 0.5rem 0;
-      color: var(--text-color);
+      font-size: 1.4rem;
+      color: var(--primary-color);
     }
 
-    .project-details p {
-      margin: 0.5rem 0;
+    .projects .project-details p {
+      font-size: 1rem;
       color: var(--light-color);
     }
 
-    .tag {
-      display: inline-block;
-      background: var(--secondary-color);
+    .techstack {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech {
+      background-color: var(--secondary-color);
       color: white;
-      padding: 0.2rem 0.5rem;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      /* No hover effect anymore */
     }
 
     footer {
@@ -224,59 +222,113 @@
           <h3>Python & Django</h3>
           <p>Expertise in server-side development.</p>
         </div>
+
+        <div>
+          <h3>PHP & Laravel</h3>
+          <p>Expertise in server-side development.</p>
+        </div>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
       <div class="projects">
-        <div>
-          <img src="https://via.placeholder.com/300" alt="E-commerce Platform Screenshot">
+
+        <div class="project-card">
           <div class="project-details">
-            <h3>E-commerce Platform</h3>
-            <p>Developed a scalable e-commerce solution with React and Node.js, implementing a dynamic product search and secure payment integration. Enabled the client to handle a 200% increase in traffic during peak seasons.</p>
-            <span class="techstack">
-                <p>React</p>
-                <p>Python</p>
-                <p>Flask</p>
-            </span>
-            <!-- <span class="tag">Web</span> -->
+            <h3>Notification Manager</h3>
+            <p>Developed a comprehensive notification management system that delivers customizable notifications across multiple applications within the company. The system supports sending notifications via various protocols, including email, mobile, web, and desktop. It features optimized queuing mechanisms and an intuitive admin dashboard for managing notifications, complete with analytics metrics to track notification usage and user engagement. Leveraged Socket.IO for real-time communication, enabling notifications to be sent from app to user, user to user, app to app, or as broadcast notifications..</p>
+            <div class="techstack">
+              <span class="tech">Python</span>
+              <span class="tech">Flask REST Api</span>
+              <span class="tech">Postgresql</span>
+              <span class="tech">AWS SQS</span>
+              <span class="tech">Node.js</span>
+              <span class="tech">Socket.IO</span>
+            </div>
           </div>
         </div>
-        <div>
-          <img src="https://via.placeholder.com/300" alt="Inventory Management System Screenshot">
+
+
+        <div class="project-card">
           <div class="project-details">
-            <h3>Inventory Management System</h3>
-            <p>Built a role-based access control system with Angular and Django to ensure secure inventory tracking. Reduced manual errors by 80% and streamlined workflows.</p>
-            <span class="techstack">
-                <p>React</p>
-                <p>Python</p>
-                <p>Flask</p>
-            </span>
-            <!-- <span class="tag">Desktop</span> -->
+            <h3>Staff Productivity Monitoring Tool</h3>
+            <p>Developed a comprehensive staff monitoring tool that enables real-time tracking of employee activities and productivity across various departments. The tool includes features for time tracking, task management, and performance analytics, allowing managers to monitor workloads and assess team performance effectively. Integrated notifications and alerts to keep staff informed of deadlines and important updates..</p>
+            <div class="techstack">
+              <span class="tech">ElectronJS</span>
+              <span class="tech">AngularJS</span>
+              <span class="tech">Node.js</span>
+              <span class="tech">Websocket</span>
+              <span class="tech">Typescript</span>
+              <span class="tech">Tailwind CSS</span>
+            </div>
           </div>
         </div>
-        <div>
-          <img src="https://via.placeholder.com/300" alt="Analytics Dashboard Screenshot">
+
+        <div class="project-card">
           <div class="project-details">
-            <h3>Analytics Dashboard</h3>
-            <p>Designed a customizable analytics dashboard using React and Python, allowing clients to visualize key business metrics in real time.</p>
-            <span class="techstack">
-                <p>React</p>
-                <p>Python</p>
-                <p>Flask</p>
-            </span>
-            
-            <!-- <span class="tag">Mobile</span> -->
+            <h3>COE Automation Microservice</h3>
+            <p>Developed a microservice to automate the generation and distribution of Certificates of Employment (COE) within the company. The service was designed to streamline the process by handling employee data extraction, document generation, and automated .</p>
+            <div class="techstack">
+              <span class="tech">AWS Lambda</span>
+              <span class="tech">Node.js</span>
+            </div>
           </div>
         </div>
+       
+        <div class="project-card">
+          <div class="project-details">
+            <h3>CareCom Booking Service Mobile App</h3>
+            <p>Developed a cross-platform booking service app that enables users to schedule and manage bookings for various services. The app includes features such as real-time availability, appointment reminders, user reviews, and secure payment processing. It offers a seamless user experience across mobile, web, and desktop platforms with a focus on ease of use and responsiveness. Integrated with third-party services for calendar synchronization and push notifications.</p>
+            <div class="techstack">
+              <span class="tech">CapacitorJS</span>
+              <span class="tech">IONIC</span>
+              <span class="tech">AngularJS</span>
+              <span class="tech">Websocket</span>
+              <span class="tech">Python</span>
+              <span class="tech">Django</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-details">
+            <h3>Listoria SOS Reporting Mobile App</h3>
+            <p>Developed a powerful and easy-to-use tool designed to help individuals quickly and efficiently report emergencies or unsafe situations in real time. With a user-friendly interface, the app allows users to send SOS alerts, providing critical information such as their location, type of emergency, and any relevant details. Listoria enhances safety by allowing rapid communication with emergency services, loved ones, or designated contacts, ensuring timely response in urgent situations. Its key features include location tracking, customizable emergency contacts, instant notifications, and quick access to first-response tips. Whether you’re in a city or a remote area, Listoria offers peace of mind with just a few taps.</p>
+            <div class="techstack">
+              <span class="tech">CapacitorJS</span>
+              <span class="tech">IONIC</span>
+              <span class="tech">AngularJS</span>
+              <span class="tech">Websocket</span>
+              <span class="tech">Python</span>
+              <span class="tech">Django</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-details">
+            <h3>Reptile Informative and e-commerce website</h3>
+            <p>Developed a comprehensive online platform designed for reptile enthusiasts, offering a blend of educational resources and a full-fledged e-commerce store. The website provides a wealth of information on reptile care, habitat setup, feeding guides, health tips, and species-specific advice, catering to beginners and experienced reptile keepers alike. In addition to the informative content, the website also features a robust e-commerce section, offering a wide range of products such as reptile food, enclosures, accessories, and healthcare supplies. Users can easily browse through the selection, make secure purchases, and access expert guidance, creating a one-stop shop for all things reptile.</p>
+            <div class="techstack">
+              <span class="tech">CapacitorJS</span>
+              <span class="tech">IONIC</span>
+              <span class="tech">AngularJS</span>
+              <span class="tech">Websocket</span>
+              <span class="tech">Python</span>
+              <span class="tech">Django</span>
+            </div>
+          </div>
+        </div>
+       
+
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>If you'd like to work together or just say hi, feel free to reach out!</p>
-      <p>Mobile: <a>+639544155057</a></p>
+      <p>Whatsapp / Mobile: <a href="tel:639542590626">+639542590626</a></p>
       <p>Email: <a href="mailto:pollante.rico@gmail.com">pollante.rico@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/rico-john-pollante-8b34261a2/" target="_blank">https://www.linkedin.com/in/rico-john-pollante-8b34261a2/</a></p>
     </section>
