@@ -72,6 +72,7 @@
   }
 
   .skills, .projects {
+    cursor: pointer;
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -162,6 +163,51 @@
     /* No hover effect anymore */
   }
 
+
+
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .slide {
+    display: none;
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+
   footer {
     text-align: center;
     background: var(--primary-color);
@@ -179,3 +225,4 @@
   footer a:hover {
     text-decoration: underline;
   }
+
