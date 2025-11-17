@@ -8,6 +8,9 @@
     --card-background: #161b22;
     --shadow-color: rgba(88, 166, 255, 0.1);
     --border-color: #58a6ff;
+    --danger-color: #ff4757;
+    --warning-color: #ffa726;
+    --success-color: #2ed573;
   }
 
   * {
@@ -100,7 +103,7 @@
     text-shadow: 0 0 5px var(--secondary-color);
   }
 
-  .skills, .projects, .certificates {
+  .skills, .projects, .certificates, .whitepapers {
     cursor: pointer;
     padding: 20px;
     display: grid;
@@ -108,7 +111,7 @@
     gap: 2rem;
   }
 
-  .skills div, .projects div, .certificates div {
+  .skills div, .projects div, .certificates div, .whitepapers div {
     background: var(--card-background);
     border-radius: 15px;
     overflow: hidden;
@@ -272,6 +275,95 @@
     color: var(--secondary-color);
   }
 
+  .whitepaper-card {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid transparent;
+  }
+
+  .whitepaper-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(88, 166, 255, 0.3);
+    border-color: var(--secondary-color);
+  }
+
+  .whitepaper-details {
+    padding: 1.5rem;
+  }
+
+  .whitepaper-details h3 {
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    text-shadow: 0 0 3px var(--secondary-color);
+  }
+
+  .paper-info {
+    background-color: rgba(88, 166, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .paper-detail {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .paper-detail:last-child {
+    margin-bottom: 0;
+  }
+
+  .paper-detail strong {
+    color: var(--secondary-color);
+  }
+
+  .paper-summary {
+    margin: 1rem 0;
+    color: var(--light-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .paper-section {
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .paper-section h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 2px var(--secondary-color);
+  }
+
+  .paper-section ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: var(--light-color);
+  }
+
+  .paper-section li {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .paper-section p {
+    margin: 0.5rem 0;
+    color: var(--light-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
   .cert-image {
     margin-top: 1rem;
     border-radius: 8px;
@@ -291,6 +383,67 @@
   .cert-photo:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px var(--secondary-color);
+  }
+
+  /* Vulnerability Project Styles */
+  .vulnerability-info {
+    background-color: rgba(255, 71, 87, 0.1);
+    border: 1px solid var(--danger-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: left;
+  }
+
+  .vuln-detail {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .vuln-detail:last-child {
+    margin-bottom: 0;
+  }
+
+  .vuln-detail strong {
+    color: var(--danger-color);
+  }
+
+  .evidence-section {
+    background-color: rgba(88, 166, 255, 0.1);
+    border: 2px dashed var(--secondary-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .evidence-section:hover {
+    background-color: rgba(88, 166, 255, 0.2);
+    border-color: var(--secondary-color);
+    transform: scale(1.02);
+  }
+
+  .evidence-link {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .evidence-preview {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 6px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+
+  .evidence-section:hover .evidence-preview {
+    opacity: 1;
   }
 
   .slideshow-container {
@@ -358,7 +511,7 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .skills, .projects, .certificates {
+    .skills, .projects, .certificates, .whitepapers {
       grid-template-columns: 1fr;
       padding: 10px;
     }
@@ -389,6 +542,22 @@
     .cert-icon {
       width: 80px;
       height: 80px;
+    }
+
+    .evidence-preview {
+      max-width: 150px;
+    }
+
+    .whitepaper-details h3 {
+      font-size: 1.2rem;
+    }
+
+    .paper-section h4 {
+      font-size: 1rem;
+    }
+
+    .paper-detail {
+      font-size: 0.85rem;
     }
   }
 
@@ -477,7 +646,7 @@
     text-shadow: 0 0 10px var(--secondary-color);
   }
 
-  #caption {
+  #caption, #evidenceCaption {
     margin: auto;
     display: block;
     width: 80%;
